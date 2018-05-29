@@ -15,13 +15,11 @@ To see the results, click on the "Dashboard" icon on the left side menu. First, 
 The data comes from U.S. governemnt spending data found on  [USA Spending](https://www.usaspending.gov/Pages/Default.aspx). Details on how to download the data can be found [here](https://www.usaspending.gov/DownloadCenter/Pages/default.aspx) or on the [beta version](https://beta.usaspending.gov) of USA Spending that's still currently in development.
 
 ## Methodology
-This application used [K-Means](https://en.wikipedia.org/wiki/K-means_clustering) to group contractors after applying [Singular Value Decomposition](https://en.wikipedia.org/wiki/Singular-value_decomposition) (SVD) to reduce the dimensionality of the data to 5 dimensions (5 dimensions were chosen arbitrarily). To determine the number of clusters, I performed K-Means using 2-15 clusters and 7 to be the optimal number of clusters using the [Elbow method](https://en.wikipedia.org/wiki/Elbow_method_(clustering)). 
-
-As discussed earlier, there were 132,716 contractors and 1204 NAICS codes used. Some contractors were removed prior to clustering because they either had a missing DUNS number or the company name was missing. Prior to performing SVD the data was binary with each row giving a company and each column a specific NAICS code. A 1 indicated the company had Procurement Instrument Identifier under the NAICS code in FY16 and 0 indicated that they did not. 
+This application use [K-Nearest Neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) to find the most similar government contractors of a chosen company after applying [Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis) (PCA) for dimensionality reduction. 
 
 ## Code
-To see the underlying code for this application, please see the [GitHub repo](https://github.com/nkk36/Similar-Government-Contractors-App).
+To see the underlying code for this application, please see the [GitHub repo](https://github.com/nkk36/Nearest-Neighbors).
 
 ## Limitations and Future Updates
-This was my first iteration of clustering over the entire data set and it needs some refinement (in particular, domain expertise in federal contracting would be helpful). Additional features could be used, but outliers seemed to be severely distorting the data. I'm working on improving this app and will release updates accordingly as new developments are made. If you are interested in contributing or have any questions/suggestions feel free to email me at <nkallfa36@gmail.com>.
+If you are interested in contributing or have any questions/suggestions feel free to email me at <nkallfa36@gmail.com>.
 
